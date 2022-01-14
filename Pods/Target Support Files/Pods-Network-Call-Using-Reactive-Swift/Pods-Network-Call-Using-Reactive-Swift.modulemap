@@ -1,0 +1,6 @@
+module Pods_Network_Call_Using_Reactive_Swift {
+  umbrella header "Pods-Network-Call-Using-Reactive-Swift-umbrella.h"
+
+  export *
+  module * { export * }
+}
