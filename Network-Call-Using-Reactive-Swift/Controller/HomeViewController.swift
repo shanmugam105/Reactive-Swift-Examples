@@ -10,12 +10,34 @@ import RxSwift
 import RxCocoa
 
 class UsersListViewController: UITableViewController {
+    let disposeBag = DisposeBag()
+    let userListRelay: PublishRelay = PublishRelay<[User]>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NetworkService.shared.makeRequestForUserList { result in
-            print(result)
-        }
+        
+        NetworkService.shared.makeRequestForUserList().subscribe { result in
+            switch result {
+            case .success(let users): self.userListRelay.accept(users)
+            case .failure(_): break
+            }
+        } onError: { error in
+            DispatchQueue.main.async {
+                self.present(error)
+            }
+        } onCompleted: {
+            DispatchQueue.main.async {
+                self.presentAlert(with: "Successfully fetched!")
+            }
+        } onDisposed: {
+            print("Sequence finished successfully!")
+        }.disposed(by: disposeBag)
+        
+        /* tableView.dataSource = nil
+        userListRelay.bind(to: tableView.rx.items(cellIdentifier: "cell",
+                                                  cellType: UITableViewCell.self)){ row, item, cell in
+            cell.textLabel?.text = item.name
+        }.disposed(by: disposeBag) */
     }
 }
 

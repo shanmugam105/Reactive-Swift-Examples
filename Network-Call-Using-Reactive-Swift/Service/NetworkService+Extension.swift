@@ -6,15 +6,16 @@
 //
 
 import Foundation
+import RxSwift
 
 extension NetworkService {
     // MARK: - Get User List
-    func makeRequestForUserList(completion: @escaping (Result<[User], Error>) -> Void) {
-        request(route: .user, type: [User].self,completion: completion)
+    func makeRequestForUserList() -> Observable<Result<[User], Error>> {
+        return request(route: .user, type: [User].self)
     }
     
     // MARK: - Get User's Blog Post Details
-    func makeRequestForUserBlogPost(parameter: [String: Any]?, completion: @escaping (Result<PostDetail, Error>) -> Void) {
-        request(route: .posts, method: .POST, parameter: parameter, type: PostDetail.self,completion: completion)
+    func makeRequestForUserBlogPost(parameter: [String: Any]?) -> Observable<Result<PostDetail, Error>> {
+        return request(route: .posts, method: .POST, parameter: parameter, type: PostDetail.self)
     }
 }
