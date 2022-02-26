@@ -9,11 +9,13 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class HomeViewController: UIViewController {
-
+class UsersListViewController: UITableViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        NetworkService.shared.makeRequestForUserList { result in
+            print(result)
+        }
     }
 }
 

@@ -42,6 +42,9 @@ enum ValidationError: LocalizedError {
     case zipCodeMustBeNumeric
     case genderMustBeSelected
     case ageMustBeNumeric
+    case unknownError
+    case serverError
+    case parsingError
 
     var errorDescription: String? {
         switch self {
@@ -113,6 +116,12 @@ enum ValidationError: LocalizedError {
             return "Your middle name is too long."
         case .middleNameTooShort:
             return "Your middle name is too short."
+        case .unknownError:
+            return "Unknown Error!"
+        case .serverError:
+            return "Server Error!"
+        case .parsingError:
+            return "Unable to parse the response"
         }
     }
 }

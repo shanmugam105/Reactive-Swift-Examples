@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04D6932427CA6710009F7714 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D6931F27CA6710009F7714 /* NetworkService.swift */; };
+		04D6932527CA6710009F7714 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D6932027CA6710009F7714 /* HTTPMethod.swift */; };
+		04D6932627CA6710009F7714 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D6932127CA6710009F7714 /* Route.swift */; };
+		04D6932C27CA6A02009F7714 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D6932A27CA6A02009F7714 /* User.swift */; };
+		04D6932D27CA6A02009F7714 /* PostDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D6932B27CA6A02009F7714 /* PostDetail.swift */; };
+		04D6932F27CA6A53009F7714 /* NetworkService+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D6932E27CA6A53009F7714 /* NetworkService+Extension.swift */; };
 		04F0324A2791BE500066ABCA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F032492791BE500066ABCA /* HomeViewController.swift */; };
 		04F0324D2791BE500066ABCA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F0324B2791BE500066ABCA /* Main.storyboard */; };
 		04F0324F2791BE530066ABCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04F0324E2791BE530066ABCA /* Assets.xcassets */; };
@@ -32,6 +38,12 @@
 /* Begin PBXFileReference section */
 		046E2DD62792F2430086095A /* Observables.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Observables.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		046E2DD92792F3860086095A /* Subjects.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Subjects.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		04D6931F27CA6710009F7714 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		04D6932027CA6710009F7714 /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		04D6932127CA6710009F7714 /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		04D6932A27CA6A02009F7714 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		04D6932B27CA6A02009F7714 /* PostDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetail.swift; sourceTree = "<group>"; };
+		04D6932E27CA6A53009F7714 /* NetworkService+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkService+Extension.swift"; sourceTree = "<group>"; };
 		04F032432791BE500066ABCA /* Network-Call-Using-Reactive-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Network-Call-Using-Reactive-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04F032492791BE500066ABCA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		04F0324C2791BE500066ABCA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -86,6 +98,34 @@
 			path = Playground;
 			sourceTree = "<group>";
 		};
+		04D6931D27CA6710009F7714 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				04D6931E27CA6710009F7714 /* Network Service */,
+				04D6932E27CA6A53009F7714 /* NetworkService+Extension.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		04D6931E27CA6710009F7714 /* Network Service */ = {
+			isa = PBXGroup;
+			children = (
+				04D6931F27CA6710009F7714 /* NetworkService.swift */,
+				04D6932027CA6710009F7714 /* HTTPMethod.swift */,
+				04D6932127CA6710009F7714 /* Route.swift */,
+			);
+			path = "Network Service";
+			sourceTree = "<group>";
+		};
+		04D6932927CA6A02009F7714 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				04D6932A27CA6A02009F7714 /* User.swift */,
+				04D6932B27CA6A02009F7714 /* PostDetail.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		04F031892791B54F0066ABCA = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +151,8 @@
 		04F032442791BE500066ABCA /* Network-Call-Using-Reactive-Swift */ = {
 			isa = PBXGroup;
 			children = (
+				04D6932927CA6A02009F7714 /* Model */,
+				04D6931D27CA6710009F7714 /* Service */,
 				04F032762791BFB00066ABCA /* Controller */,
 				04F0327B2791C0390066ABCA /* Storyboard */,
 				04F032772791BFBE0066ABCA /* Global */,
@@ -379,12 +421,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04D6932627CA6710009F7714 /* Route.swift in Sources */,
 				04F032852791CAF80066ABCA /* UIViewController+Extension.swift in Sources */,
 				04F032742791BF4D0066ABCA /* SceneDelegate.swift in Sources */,
 				04F032722791BF4D0066ABCA /* AppDelegate.swift in Sources */,
 				04F0324A2791BE500066ABCA /* HomeViewController.swift in Sources */,
+				04D6932F27CA6A53009F7714 /* NetworkService+Extension.swift in Sources */,
+				04D6932527CA6710009F7714 /* HTTPMethod.swift in Sources */,
+				04D6932C27CA6A02009F7714 /* User.swift in Sources */,
+				04D6932D27CA6A02009F7714 /* PostDetail.swift in Sources */,
 				04F032832791CAF80066ABCA /* LocalizedError.swift in Sources */,
 				04F032812791CAF80066ABCA /* InputValidation.swift in Sources */,
+				04D6932427CA6710009F7714 /* NetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
