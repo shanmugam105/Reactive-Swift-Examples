@@ -7,6 +7,12 @@
 
 import UIKit
 
+extension UITableViewCell {
+    static var identifier: String {
+        return String(describing: self)
+    }
+}
+
 extension UIViewController {
     // MARK: ViewController Instantiation
     static var identifier: String {

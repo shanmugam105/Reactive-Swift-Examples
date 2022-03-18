@@ -16,6 +16,8 @@
 		04A3EC7D27E4E061001ED91B /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F032802791CAF80066ABCA /* UIViewController+Extension.swift */; };
 		04A3EC7E27E4E067001ED91B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F032702791BF4D0066ABCA /* AppDelegate.swift */; };
 		04A3EC7F27E4E06B001ED91B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F032712791BF4D0066ABCA /* SceneDelegate.swift */; };
+		04A3EC8327E4F58C001ED91B /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A3EC8127E4F58C001ED91B /* NewsTableViewCell.swift */; };
+		04A3EC8427E4F58C001ED91B /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A3EC8227E4F58C001ED91B /* NewsTableViewCell.xib */; };
 		04D6932427CA6710009F7714 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D6931F27CA6710009F7714 /* NetworkService.swift */; };
 		04D6932527CA6710009F7714 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D6932027CA6710009F7714 /* HTTPMethod.swift */; };
 		04D6932627CA6710009F7714 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D6932127CA6710009F7714 /* Route.swift */; };
@@ -67,6 +69,8 @@
 		04A3EC7227E4E012001ED91B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04A3EC7527E4E012001ED91B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04A3EC7727E4E012001ED91B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04A3EC8127E4F58C001ED91B /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		04A3EC8227E4F58C001ED91B /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
 		04D6931F27CA6710009F7714 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		04D6932027CA6710009F7714 /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		04D6932127CA6710009F7714 /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
@@ -141,9 +145,10 @@
 		04A3EC6827E4E00C001ED91B /* Sectioned-TableView-Using-Reactive-Swift */ = {
 			isa = PBXGroup;
 			children = (
-				04A3EC6D27E4E00C001ED91B /* NewsListViewController.swift */,
-				04A3EC6F27E4E00C001ED91B /* Main.storyboard */,
+				04A3EC8727E4F5D1001ED91B /* Controller */,
+				04A3EC8627E4F5C4001ED91B /* Storyboard */,
 				04A3EC8027E4E08B001ED91B /* Global */,
+				04A3EC8527E4F593001ED91B /* NewsTableViewCell */,
 			);
 			path = "Sectioned-TableView-Using-Reactive-Swift";
 			sourceTree = "<group>";
@@ -156,6 +161,31 @@
 				04A3EC7727E4E012001ED91B /* Info.plist */,
 			);
 			path = Global;
+			sourceTree = "<group>";
+		};
+		04A3EC8527E4F593001ED91B /* NewsTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				04A3EC8127E4F58C001ED91B /* NewsTableViewCell.swift */,
+				04A3EC8227E4F58C001ED91B /* NewsTableViewCell.xib */,
+			);
+			path = NewsTableViewCell;
+			sourceTree = "<group>";
+		};
+		04A3EC8627E4F5C4001ED91B /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				04A3EC6F27E4E00C001ED91B /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		04A3EC8727E4F5D1001ED91B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04A3EC6D27E4E00C001ED91B /* NewsListViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		04D6931D27CA6710009F7714 /* Service */ = {
@@ -441,6 +471,7 @@
 			files = (
 				04A3EC7627E4E012001ED91B /* LaunchScreen.storyboard in Resources */,
 				04A3EC7327E4E012001ED91B /* Assets.xcassets in Resources */,
+				04A3EC8427E4F58C001ED91B /* NewsTableViewCell.xib in Resources */,
 				04A3EC7127E4E00C001ED91B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -542,6 +573,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04A3EC7D27E4E061001ED91B /* UIViewController+Extension.swift in Sources */,
+				04A3EC8327E4F58C001ED91B /* NewsTableViewCell.swift in Sources */,
 				04A3EC7C27E4E05D001ED91B /* LocalizedError.swift in Sources */,
 				04A3EC6E27E4E00C001ED91B /* NewsListViewController.swift in Sources */,
 				04A3EC7E27E4E067001ED91B /* AppDelegate.swift in Sources */,
