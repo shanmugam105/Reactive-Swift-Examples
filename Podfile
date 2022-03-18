@@ -15,3 +15,7 @@ end
 target 'Network-Call-Using-Reactive-Swift' do
  rx_pods
 end
+
+target 'Sectioned-TableView-Using-Reactive-Swift' do
+ rx_pods
+end

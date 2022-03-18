@@ -1,0 +1,6 @@
+module Pods_Sectioned_TableView_Using_Reactive_Swift {
+  umbrella header "Pods-Sectioned-TableView-Using-Reactive-Swift-umbrella.h"
+
+  export *
+  module * { export * }
+}

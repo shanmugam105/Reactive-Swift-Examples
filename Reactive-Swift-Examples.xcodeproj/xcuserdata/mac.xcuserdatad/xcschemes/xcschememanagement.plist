@@ -7,12 +7,17 @@
 		<key>Login-Validation-Using-Reactive-Swift.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>10</integer>
+			<integer>16</integer>
 		</dict>
 		<key>Network-Call-Using-Reactive-Swift.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>9</integer>
+			<integer>17</integer>
+		</dict>
+		<key>Sectioned-TableView-Using-Reactive-Swift.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>18</integer>
 		</dict>
 	</dict>
 </dict>
