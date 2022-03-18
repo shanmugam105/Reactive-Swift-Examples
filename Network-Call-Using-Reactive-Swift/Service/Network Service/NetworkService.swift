@@ -20,28 +20,23 @@ final class NetworkService: NSObject {
                              type: T.Type) -> Observable<Result<T, Error>> {
         return Observable.create { observer in
             let request = self.createRequest(route: route, method: method, parameter: parameter)
-            let task = URLSession.shared.dataTask(with: request) {data, _, error in
+            let task = URLSession.shared.rx.data(request: request).subscribe { data in
+                // let responseString = String(data: data, encoding: .utf8) ?? "Unable to convert as string."
+                // print("Response is:-------> \(responseString)")
                 
-                if let data = data {
-                    // let responseString = String(data: data, encoding: .utf8) ?? "Unable to convert as string."
-                    // print("Response is:-------> \(responseString)")
+                if let result = try? JSONDecoder().decode(type, from: data) {
+                    observer.onNext(.success(result))
                     
-                    if let result = try? JSONDecoder().decode(type, from: data) {
-                        observer.onNext(.success(result))
-                        observer.onCompleted()
-                    } else {
-                        // print("Error is:-------> \(ValidationError.parsingError.localizedDescription)")
-                        observer.onError(ValidationError.parsingError)
-                    }
-                } else if let error = error {
-                    // print("Error is:-------> \(error.localizedDescription)")
-                    observer.onError(error)
                 } else {
-                    observer.onError(ValidationError.unknownError)
+                    // print("Error is:-------> \(ValidationError.parsingError.localizedDescription)")
+                    observer.onError(ValidationError.parsingError)
                 }
+            } onError: { error in
+                observer.onError(error)
+            } onCompleted: {
+                observer.onCompleted()
             }
-            task.resume()
-            return Disposables.create()
+            return task
         }
     }
     /// This function helps to create URLRequest

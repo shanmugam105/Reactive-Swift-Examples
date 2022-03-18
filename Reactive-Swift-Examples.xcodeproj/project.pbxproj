@@ -35,6 +35,19 @@
 		6506F50DA9F4CA8D1B78334D /* libPods-Login-Validation-Using-Reactive-Swift.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A656B300BED42C35A06D5F79 /* libPods-Login-Validation-Using-Reactive-Swift.a */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		041B278527CE4C5E00B7DE2A /* Embed App Clips */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/AppClips";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			name = "Embed App Clips";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		046E2DD62792F2430086095A /* Observables.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Observables.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		046E2DD92792F3860086095A /* Subjects.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Subjects.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -281,6 +294,7 @@
 				04F0323F2791BE500066ABCA /* Sources */,
 				04F032402791BE500066ABCA /* Frameworks */,
 				04F032412791BE500066ABCA /* Resources */,
+				041B278527CE4C5E00B7DE2A /* Embed App Clips */,
 			);
 			buildRules = (
 			);
