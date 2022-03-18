@@ -5,6 +5,7 @@ platform :ios, '12.1'
 def rx_pods
   pod 'RxSwift', '6.2.0'
   pod 'RxCocoa', '6.2.0'
+  pod 'RxDataSources', '~> 5.0'
 end
 
 target 'Login-Validation-Using-Reactive-Swift' do
