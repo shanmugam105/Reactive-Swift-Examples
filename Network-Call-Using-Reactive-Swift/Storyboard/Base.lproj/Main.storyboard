@@ -26,10 +26,6 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="gol-bF-d44" id="lww-gs-eGX"/>
-                            <outlet property="delegate" destination="gol-bF-d44" id="HlZ-o7-E9c"/>
-                        </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Users" id="g5b-qr-MgV"/>
                 </tableViewController>

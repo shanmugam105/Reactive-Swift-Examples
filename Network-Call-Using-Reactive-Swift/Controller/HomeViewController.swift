@@ -33,11 +33,29 @@ class UsersListViewController: UITableViewController {
             print("Sequence finished successfully!")
         }.disposed(by: disposeBag)
         
-        /* tableView.dataSource = nil
+        tableView.delegate = nil
+        
+        tableView
+            .rx.setDelegate(self)
+            .disposed(by: disposeBag)
+        
+        tableView.dataSource = nil
+        
         userListRelay.bind(to: tableView.rx.items(cellIdentifier: "cell",
                                                   cellType: UITableViewCell.self)){ row, item, cell in
             cell.textLabel?.text = item.name
-        }.disposed(by: disposeBag) */
+        }.disposed(by: disposeBag)
+        
+        tableView.rx.modelSelected(User.self).bind { user in
+            DispatchQueue.main.async {
+                self.presentAlert(with: "Hello, " + user.name + "!")
+            }
+        }
     }
 }
 
+extension UsersListViewController {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        100
+    }
+}
